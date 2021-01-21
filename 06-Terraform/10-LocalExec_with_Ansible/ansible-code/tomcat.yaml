@@ -1,0 +1,6 @@
+---
+- hosts: tomcat
+  name: "My Tomcat App Server Deployment"
+  become: yes
+  roles:
+  - tomcat 

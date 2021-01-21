@@ -1,0 +1,10 @@
+---
+
+- hosts: all 
+  become: yes 
+  roles: 
+  - server-common
+
+
+- include: webserver.yaml tags="web"
+- include: tomcat.yaml    tags="tom"

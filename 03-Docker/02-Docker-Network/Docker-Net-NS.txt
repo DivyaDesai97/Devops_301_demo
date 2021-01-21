@@ -1,0 +1,195 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/devops301-mindtree-09-Jan-2021.git
+    3  ls
+    4  cd devops301-mindtree-09-Jan-2021/
+    5  ls
+    6  git pull 
+    7  ls
+    8  cd 03-Docker/
+    9  ls
+   10  cd 00-Setup/
+   11  ls
+   12  ./install-docker.sh 
+   13  ls
+   14  free 0m 
+   15  free -m
+   16  ls
+   17  cd 
+   18  cd - 
+   19  ls
+   20  cd ..
+   21  ls
+   22  docker version 
+   23  ls
+   24  docker run busybox echo "Hello World"
+   25  docker ps 
+   26  docker ps -l
+   27  docker run busybox echo "Hello World"
+   28  docker ps -l
+   29  docker ps -a
+   30  docker run -it busybox 
+   31  docker ps 
+   32  docker ps -a
+   33  docker run -it busybox 
+   34  docker ps 
+   35  docker ps -a
+   36  docker ps 
+   37  docker ps -a
+   38  docker start 0126757baf1e
+   39  docker ps 
+   40  docker exec -it 0126757baf1e ls -ltr 
+   41  docker exec -it 0126757baf1e cat amitvashist7/
+   42  docker exec -it 0126757baf1e cat amitvashist7/Hello.txt
+   43  docker exec -it 0126757baf1e ls  amitvashist7
+   44  docker exec -it 0126757baf1e cat amitvashist7/hello.txt
+   45  docker ps 
+   46  docker attach 0126757baf1e
+   47  docker ps 
+   48  docker attach 0126757baf1e
+   49  docker ps 
+   50  docker attach 0126757baf1e
+   51  docker ps 
+   52  ls
+   53  mkdir 01-Dockerfiles
+   54  ls
+   55  mkdir 01-Dockerfiles/apache
+   56  ls
+   57  cd 01-Dockerfiles/
+   58  ls
+   59  cd apache/
+   60  ls
+   61  vim Dockerfile
+   62  ls
+   63  ks
+   64  ls
+   65  mv Dockerfile Dockerfile_Amit
+   66  ls
+   67  docker build -t myappache . 
+   68  ll
+   69  docker build -t myappache -f Dockerfile_Amit . 
+   70  ls
+   71  echo "Welcome to the world of Docker Containers" > info.html
+   72  ls
+   73  docker build -t myappache:v1 -f Dockerfile_Amit . 
+   74  ls
+   75  docker images 
+   76  docker run -d --name web-test-1 myappache:v1
+   77  docker ps 
+   78  docker stats 
+   79  ls
+   80  docker ps 
+   81  docker inspect d4b5e27c8e5e
+   82  ls
+   83  docker ps 
+   84  curl 172.17.0.3
+   85  curl 172.17.0.3/info.html
+   86  curl 172.17.0.3
+   87  docker ps 
+   88  docker run -it ubuntu:16.04 
+   89  docker run -it centos:7  
+   90  docker network ls 
+   91  docker network inspect 7a52409726fa
+   92  ip addr 
+   93  docker ps 
+   94  docker exec -it 3314a5dfdd61 ifconfig 
+   95  docker exec -it 3314a5dfdd61 route -n 
+   96  ls
+   97  vim Dockerfile_Amit 
+   98  docker build -t myappache:v2 -f Dockerfile_Amit . 
+   99  docker images 
+  100  docker run -d --name web-test-2 myappache:v2
+  101  docker ps 
+  102  ip addr 
+  103  ls
+  104  docker ps 
+  105  docker inspect 7af72599dacf
+  106  docker ps 
+  107  docker run -d --name web-test-3 -P myappache:v1
+  108  docker ps 
+  109  docker run -d --name web-test-3 -p 8080:80 myappache:v1
+  110  docker run -d --name web-test-4 -p 8080:80 myappache:v1
+  111  docker ps 
+  112  ls
+  113  vim Dockerfile_Amit 
+  114  docker build -t myappache:v3 -f Dockerfile_Amit . 
+  115  docker run -d --name web-test-5 -P myappache:v3
+  116  docker ps 
+  117  netstat -tulnp
+  118  telnet localhost 8080
+  119  telnet localhost 32769
+  120  telnet localhost 32768
+  121  telnet localhost 32769
+  122  telnet localhost 32768
+  123  docker images 
+  124  docker inspect myappache:v1 
+  125  docker inspect myappache:v3
+  126  docker run -d --name web-test-6  myappache:v3
+  127  docker ps 
+  128  docker run -d --name web-test-7 -P   myappache:v3
+  129  docker ps 
+  130  ls
+  131  vim Dockerfile_Amit 
+  132  ls
+  133  docker images 
+  134  docker rm -f $(docker ps -qa)
+  135  docker images 
+  136  docker run -d --name web-test-7 -P   myappache:v1
+  137  docker run -d --name web-test-8 -P   myappache:v2
+  138  docker run -d --name web-test-9 -P   myappache:v3
+  139  docker ps 
+  140  vim Dockerfile_Amit 
+  141  docker build -t myappache:v4 -f Dockerfile_Amit . 
+  142  docker run -d --name web-test-10 -P   myappache:v4
+  143  docker ps 
+  144  netstat -tulnp 
+  145  docker ps 
+  146  systemctl status docker
+  147  docker ps 
+  148  docker inspect 30b4e4cd635f
+  149  iptables -L
+  150  netstat -tulnp 
+  151  docker rm -f $(docker ps -qa)
+  152  ip addr 
+  153  ip link 
+  154  ip addr 
+  155  docker run -d --name web-test-1 -P   myappache:v4
+  156  docker ps 
+  157  ip link 
+  158  docker run -d --name web-test-2 -P   myappache:v4
+  159  ip link 
+  160  ip netns 
+  161  cd /var/lib/docker/network/
+  162  ls
+  163  cd ..
+  164  ls
+  165  cd .
+  166  cd 
+  167  cd /var/run/docker/netns/
+  168  ls
+  169  ll
+  170  cat 597e04dbf1bf 
+  171  file 597e04dbf1bf 
+  172  ll
+  173  pwd
+  174  ln -s /var/run/docker/netns /var/run/netns
+  175  cd 
+  176  ls
+  177  ip netns 
+  178  ip link 
+  179  docker ps 
+  180  docker inspect web-test-1 | grep -i d2f00ffc5717
+  181  docker inspect web-test-2 | grep -i d2f00ffc5717
+  182  docker inspect web-test-2 | grep -i 597e04dbf1bf
+  183  ip link 
+  184  ip netns 
+  185  ip netns exec d2f00ffc5717 ip link
+  186  ip netns exec d2f00ffc5717 ip addr 
+  187  docker inspect web-test-1 | grep -i 172.17.0.2
+  188  ls
+  189  cd devops301-mindtree-09-Jan-2021/
+  190  ls
+  191  history 
+  192  ls
+  193  cd 03-Docker/
+  194  ls
+  195  history > Docker-Net-NS.txt

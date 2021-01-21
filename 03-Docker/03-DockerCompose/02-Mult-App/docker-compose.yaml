@@ -1,0 +1,15 @@
+nginx: 
+  image: nginx:latest
+  ports:
+    - '8090:80'
+
+
+petclinic-webapp:
+  image: petclinic-webapp:v2
+  ports:
+    - '8080'
+
+myapache:
+  image: myappache:v4 
+  ports:
+    - '80'
