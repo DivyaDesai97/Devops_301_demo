@@ -13,7 +13,7 @@ try {
 
 
 stage('GitCheckOut') {
-git branch: 'stage', credentialsId: '01', url: 'https://github.com/amitvashisttech/devops301-mindtree-09-Jan-2021.git'
+git branch: 'stage', credentialsId: '01', url: 'https://github.com/DivyaDesai97/Devops_301_demo.git'
 }
 
 
@@ -33,7 +33,7 @@ stage('Build Managment') {
  }
 
 stage('Deployment - Stage'){
- deploy adapters: [tomcat8(credentialsId: '02', path: '', url: 'http://172.31.0.201:8080/')], contextPath: 'petclinic', onFailure: false, war: 'files/petclinic.war'
+ deploy adapters: [tomcat8(credentialsId: '02', path: '', url: 'http://kqvkn48231dns.eastus2.cloudapp.azure.com:8080/')], contextPath: 'petclinic', onFailure: false, war: 'files/petclinic.war'
 }
 
 }

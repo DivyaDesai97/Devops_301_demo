@@ -13,7 +13,7 @@ try {
 
 
 stage('GitCheckOut') {
-git branch: 'preprod', credentialsId: '01', url: 'https://github.com/amitvashisttech/devops301-mindtree-09-Jan-2021.git'
+git branch: 'preprod', credentialsId: '01', url: 'https://github.com/DivyaDesai97/Devops_301_demo.git'
 }
 
 
