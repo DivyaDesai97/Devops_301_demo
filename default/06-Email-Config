@@ -1,0 +1,45 @@
+node {
+
+notify('Started')
+// Project Dir
+    def project_path = "01-Jenkins/petclinic-code"
+
+
+stage('GitCheckOut') {
+git branch: 'main', credentialsId: '01', url: 'https://github.com/amitvashisttech/devops301-mindtree-09-Jan-2021.git'
+}
+
+
+
+dir(project_path){
+
+stage('Maven Clean') {
+sh 'mvn clean'
+}
+
+stage('Maven Compile') {
+sh 'mvn compile'
+}
+
+stage('Maven test') {
+sh 'mvn test'
+}
+
+stage('Maven pkg') {
+sh 'mvn package'
+}
+
+}
+
+notify('Completed')
+}
+
+
+def notify(status){
+    emailext(
+    to: "amitvashist7@outlook.com",
+    subject: "${status} :JOB '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+    body:"""<p>${status}: :JOB '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+            <p>Check Console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
+    )
+}

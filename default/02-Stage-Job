@@ -1,0 +1,25 @@
+node {
+
+stage('GitCheckOut') {
+git branch: 'main', credentialsId: '01', url: 'https://github.com/amitvashisttech/devops301-mindtree-09-Jan-2021.git'
+}
+
+stage('Maven Clean') {
+sh 'mvn clean -f 01-Jenkins/petclinic-code/pom.xml'
+}
+
+stage('Maven Compile') {
+sh 'mvn compile -f 01-Jenkins/petclinic-code/pom.xml'
+}
+
+stage('Maven test') {
+sh 'mvn test -f 01-Jenkins/petclinic-code/pom.xml'
+}
+
+stage('Maven pkg') {
+sh 'mvn package -f 01-Jenkins/petclinic-code/pom.xml'
+}
+stage('Archive Artifacts') {
+archive '01-Jenkins/petclinic-code/target/*.war'    
+}
+}

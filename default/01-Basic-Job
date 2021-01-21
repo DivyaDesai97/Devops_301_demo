@@ -1,0 +1,11 @@
+node {
+
+git branch: 'main', credentialsId: '01', url: 'https://github.com/amitvashisttech/devops301-mindtree-09-Jan-2021.git'
+
+sh 'mvn clean -f 01-Jenkins/petclinic-code/pom.xml'
+sh 'mvn compile -f 01-Jenkins/petclinic-code/pom.xml'
+sh 'mvn test -f 01-Jenkins/petclinic-code/pom.xml'
+sh 'mvn package -f 01-Jenkins/petclinic-code/pom.xml'
+
+archive '01-Jenkins/petclinic-code/target/*.war'    
+}

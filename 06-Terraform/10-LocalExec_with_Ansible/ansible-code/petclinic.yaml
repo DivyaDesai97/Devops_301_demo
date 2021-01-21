@@ -1,6 +1,0 @@
----
-- hosts: all
-  name: "Petclinic App Server Deployment"
-  become: yes
-  roles:
-  - petclinic
