@@ -1,29 +1,20 @@
-172.31.0.201
-172.31.0.202
-172.31.0.200
-
+3.137.182.255
 
 
 [web]
-172.31.0.200
-172.31.0.201
-
+3.137.182.255
 
 [db]
-172.31.0.202
-
+3.137.182.255
 
 [prod]
-172.31.0.200
-172.31.0.201
-172.31.0.202
+3.137.182.255
 
 [uat]
-172.31.0.211
-172.31.0.212
+3.137.182.255
 
 [ansible]
-172.31.0.200
+3.137.182.255
 
 [dc:children]
 web
@@ -32,5 +23,5 @@ db
 
 
 [dc:vars]
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file=/root/Ansible_key1.pem
