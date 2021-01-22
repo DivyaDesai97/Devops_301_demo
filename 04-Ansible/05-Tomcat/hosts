@@ -1,33 +1,22 @@
-172.31.0.201
-172.31.0.202
-172.31.0.200
-
-
+3.129.195.17
 
 [web]
-172.31.0.202
-172.31.0.200
-
+3.129.195.17
 
 [tomcat]
-172.31.0.202
-
+3.129.195.17
 
 [db]
-172.31.0.202
-
+3.129.195.17
 
 [prod]
-172.31.0.200
-172.31.0.201
-172.31.0.202
+3.129.195.17
 
 [uat]
-172.31.0.211
-172.31.0.212
+3.129.195.17
 
 [ansible]
-172.31.0.200
+3.129.195.17
 
 [dc:children]
 web
@@ -37,5 +26,5 @@ tomcat
 
 
 [dc:vars]
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file=/root/Ansible_key1.pem
